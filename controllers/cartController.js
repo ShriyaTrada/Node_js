@@ -1,6 +1,7 @@
 const { cartSchema } = require('../validate');
 const { Cart } = require('../models');
 
+
 exports.addToCart = async (req, res) => {
     const { error } = cartSchema.validate(req.body);
     if (error) return res.status(400).json({ error: error.details[0].message });
